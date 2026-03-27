@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding with Bee! 🐝</title>
+    <style>
+        /* Pengaturan Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffdf0; /* Warna krem madu */
+            color: #5c4b37;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Awan Putih Lembut --- */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        .cloud::after, .cloud::before {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+        .c1 { width: 150px; height: 50px; top: 10%; left: 5%; }
+        .c1::after { width: 70px; height: 70px; top: -35px; left: 20px; }
+        .c1::before { width: 60px; height: 60px; top: -25px; left: 70px; }
+
+        .c2 { width: 120px; height: 40px; top: 20%; right: 10%; }
+        .c2::after { width: 60px; height: 60px; top: -30px; left: 30px; }
+
+        /* --- Animasi Lebah Terbang --- */
+        .bee-container {
+            position: absolute;
+            top: 15%;
+            z-index: 10;
+            font-size: 3rem;
+            /* Animasi: nama | durasi | gerak linear | terus menerus */
+            animation: beePath 12s linear infinite;
+        }
+
+        @keyframes beePath {
+            0% { 
+                left: -10%; 
+                transform: translateY(0) rotate(10deg); 
+            }
+            25% { 
+                transform: translateY(-60px) rotate(-10deg); 
+            }
+            50% { 
+                transform: translateY(40px) rotate(15deg); 
+            }
+            75% { 
+                transform: translateY(-30px) rotate(-5deg); 
+            }
+            100% { 
+                left: 110%; 
+                transform: translateY(0) rotate(10deg); 
+            }
+        }
+
+        /* --- Kartu Konten --- */
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(212, 160, 23, 0.15);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 4px solid #f9e27d;
+            z-index: 5;
+            position: relative;
+        }
+
+        h1 {
+            color: #d4a017;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .step {
+            text-align: left;
+            background-color: #fffef2;
+            padding: 15px;
+            margin: 10px 0;
+            border-
