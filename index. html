@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding is Magic! ✨</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff; /* Light Sky Blue */
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+            overflow-x: hidden; /* Keeps the bird within the screen width */
+            position: relative;
+        }
+
+        /* --- Cloud Generator --- */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            z-index: -1; /* Puts clouds behind the main content */
+        }
+        .cloud::after, .cloud::before {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        /* Cloud shapes and positions */
+        .c1 { width: 100px; height: 40px; top: 10%; left: 10%; }
+        .c1::after { width: 50px; height: 50px; top: -25px; left: 15px; }
+        .c1::before { width: 40px; height: 40px; top: -15px; left: 50px; }
+
+        .c2 { width: 150px; height: 60px; top: 25%; right: 15%; transform: scale(1.2); }
+        .c2::after { width: 70px; height: 70px; top: -35px; left: 25px; }
+        .c2::before { width: 60px; height: 60px; top: -25px; left: 70px; }
+
+        .c3 { width: 80px; height: 30px; bottom: 20%; left: 20%; opacity: 0.5; }
+        .c3::after { width: 40px; height: 40px; top: -20px; left: 10px; }
+
+        /* --- Flying Bird (Emoji + Animation) --- */
+        .bird-container {
+            position: absolute;
+            top: 15%; /* Height of the bird's flight path */
+            z-index: 10;
+            font-size: 2rem; /* Size of the bird */
+            
+            /* The animation instruction */
+            animation: flyAcross 15s linear infinite; 
+        }
+
+        /* Keyframes: Define the path from left to right */
+        @keyframes flyAcross {
+            0% { left: -10%; transform: translateY(0px) scaleX(1); } /* Start off-screen left */
+            45% { transform: translateY(-20px) scaleX(1); } /* Slight wobble up */
+            50% { transform: translateY(0px) scaleX(1); } /* Middle of screen */
+            55% { transform: translateY(20px) scaleX(1); } /* Slight wobble down */
+            100% { left: 110%; transform: translateY(0px) scaleX(1); } /* End off-screen right */
+        }
+
+        /* Container for the content */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(5px); /* Blurs the clouds behind the card slightly */
+            margin-top: 100px; /* Space for the bird to fly above */
+        }
+
+        h1 {
+            color: #6da9e4; /* Sky blue matching the vibe */
+            text-align: center;
+        }
+
+        .step {
+            background-color: #fffaf0; /* Light cream */
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 5px solid #ffe4b5;
+        }
+
+        button {
+            background-color: #6da9e4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            margin: 20px auto;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background-color: #559ad9;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+
+    <div class="bird-container">
+        🐦
+    </div>
+
+    <div class="container">
+        <h1>Coding is Magic! ✨</h1>
+        <p>Coding is just giving instructions to a computer. Here is the secret recipe:</p>
+
+        <div class="step">
+            <strong>Step 1: Pick a Language 🍦</strong>
+            <p>Try Python (for logic) or HTML/CSS (for building websites like this!)</p>
+        </div>
+
+        <div class="step">
+            <strong>Step 2: Get a Code Editor 📝</strong>
+            <p>Download VS Code—it's like a fancy notebook for your code.</p>
+        </div>
+
+        <div class="step">
+            <strong>Step 3: Break Things! 🔨</strong>
+            <p>The best way to learn is to write code, see it break, and fix it.</p>
+        </div>
+
+        <button onclick="celebrate()">Click for Encouragement!</button>
+    </div>
+
+    <footer>Made with ✨ and Code</footer>
+
+    <script>
+        function celebrate() {
+            alert("The sky is the limit! You're going to be an amazing coder! 🌟🐦");
+        }
+    </script>
+
+</body>
+</html>
